@@ -1,10 +1,16 @@
 import React, {Component} from "react";
 import { Field, reduxForm } from "redux-form";
 
+//Desde este componte vamos a hacer que cuando se de enter en la barra de búsqueda va a resultados, para ello necesitamos el enrutador
+//componente de orden superior HOC, inyecta propiedades relacionadas con la navegación (history, location y match)
+import {withRouter} from "react-router-dom";
+
 class SearchBar extends Component{
-     //Este método maneja la acción de envío del formulario. Recibe un objeto que contiene el campo query, y simplemente lo registra en la consola.
+     //Este método maneja la acción de envío del formulario. Recibe un objeto que contiene el campo query, y simplemente lo registra en la consola, bueno ahora lo manda a results
     handleFormSubmit = function ({query}) {
         console.log("Envio del formulario", query);
+        //Esto nos lleva directamente a results
+        this.props.history.push('/results');
     }
     //Este método genera un campo de entrada (input) en el formulario. Usa el objeto field, que viene de Redux Form, y distribuye (...) todas las propiedades de field.input dentro del componente input. Esto incluye manejar el estado y los eventos del campo de entrada.
     renderInput(field) {
@@ -29,5 +35,8 @@ SearchBar = reduxForm({
     //Le damos opciones de configuración
     form: 'searchBar'
 })(SearchBar);//Se pasa el componente para que podamos utilizar esto de forma efectiva
+
+//Le damos a searchbar capacidades relacionadas con la navegación o enrutamiento.
+SearchBar = withRouter(SearchBar);
 
 export default SearchBar;

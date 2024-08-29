@@ -21,7 +21,7 @@ function main() {
       <BrowserRouter>
         {/*Vamos a definir aqui las rutas*/}
         <Switch>
-          <Route path = "/" component={Home} />
+          <Route exact path = "/" component={Home} />
           <Route path = "/results" component={Results} />
         </Switch>
       </BrowserRouter>
