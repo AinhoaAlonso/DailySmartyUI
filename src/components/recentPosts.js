@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 // importa todas las acciones definidas en el archivo actions/index.js
 import * as actions from "../actions";
+import Post from "./post";
 class RecentPosts extends Component{
 
     //se ejecuta una vez que el componente ha sido montado en el DOM.
