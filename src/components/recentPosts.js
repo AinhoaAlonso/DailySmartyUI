@@ -13,6 +13,21 @@ class RecentPosts extends Component{
         //lama a una acción de Redux llamada fetchRecentPosts(que la trae de actions/index.js). Esta acción probablemente se utiliza para realizar una operación asíncrona, como obtener posts recientes de una API, y luego actualizar el estado global de la aplicación.
         this.props.fetchRecentPosts();
     }
+    //Creamos una funcion para que nos va a devolver los datos que le pidamos
+    renderPosts = function (){
+        //Lo mapeamo porque queremos acceder a la publicacion y la clave, nosotros cogemos otros datos porque es otra API
+        const posts = this.props.recentPost.map((post, index) => {
+            //La vamos a poner una condicion para que solo devuelva 3 resultados
+            if (index <3){
+                return(
+                    <li key={index}>
+                        {post.title}
+                    </li>
+                )
+            }
+        })
+        return posts
+    }
     //define el contenido HTML que se va a mostrar en la pantalla.
     render(){
         return(
@@ -20,16 +35,23 @@ class RecentPosts extends Component{
                 <div className="recent-posts-wrapper">
                     <div className="recent-posts-heading">Recent Posts</div>
                     <ul className="recent-posts-posts">
-                        <li>Recent Post 0</li>
-                        <li>Recent Post 1</li>
-                        <li>Recent Post 2</li>
+                        {/*Aqui llamamos a la funcion */}
+                        {this.renderPosts()}
+            
                     </ul>
                 </div>    
             </div>
         )
     }
 }
+//configurar nuestro mapa de estado, estamos teniendo acceso a nuestros posts
+function mapStateToProps(state) {
+    return {
+        recentPost: state.results.recentPosts
+    }
+}
+
 //connect es una función que conecta un componente de React al store de Redux.
-//1º argumento null, lo que significa que este componente no necesita acceder a ningún estado global específico de Redux (es decir, no necesita leer nada del store). De momento!!!
+//1º argumento null, lo que significa que este componente no necesita acceder a ningún estado global específico de Redux (es decir, no necesita leer nada del store). Necesita leer cada post que le pasamos
 //2º argumento actions, todas las acciones importadas como props al componente RecentPosts. Esto permite que RecentPosts llame a this.props.fetchRecentPosts().
-export default connect(null, actions) (RecentPosts);
+export default connect(mapStateToProps, actions) (RecentPosts);

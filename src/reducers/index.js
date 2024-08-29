@@ -7,7 +7,6 @@ const rootReducer = combineReducers({
   //Esto lo quitamos porque no nos deja escribir en el searchbar
   //state: (state = {}) => state
   form,
-  //llamamos a los resultados
   results
 });
 
