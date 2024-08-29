@@ -4,9 +4,12 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 
+import {thunk} from "redux-thunk";
+
 import reducers from "./reducers";
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+//Esto no se porque lo hace
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 import Home from "./components/home";
 //Traemos el componente resultados
