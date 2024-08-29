@@ -9,6 +9,8 @@ import reducers from "./reducers";
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 import Home from "./components/home";
+//Traemos el componente resultados
+import Results from "./components/results";
 
 import "./style/main.scss";
 import RecentPosts from "./components/recentPosts";
@@ -20,7 +22,7 @@ function main() {
         {/*Vamos a definir aqui las rutas*/}
         <Switch>
           <Route path = "/" component={Home} />
-          <Route path = "/recentPosts" component={RecentPosts} />
+          <Route path = "/results" component={Results} />
         </Switch>
       </BrowserRouter>
     </Provider>,
