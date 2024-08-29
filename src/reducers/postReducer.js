@@ -14,6 +14,7 @@ export default function(state = INIT_STATE, action){
         case SET_RECENT_POSTS:
             const recentPosts = action.payload;
             return {
+                //aqui el operador de propagacion esta tomando todos los datos de INIT_STATE
                 ...state, 
                 recentPosts
             };
