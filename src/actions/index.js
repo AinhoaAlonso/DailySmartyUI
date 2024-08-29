@@ -1,6 +1,5 @@
 import { SET_RECENT_POSTS } from "./types";
 
-
 import axios from "axios";
 //función no devuelve un objeto de acción estándar, sino una función.
 export function fetchRecentPosts() { 
@@ -11,7 +10,7 @@ export function fetchRecentPosts() {
         axios.get("https://swapi.dev/api/films/")
             .then(response =>{
                 //Esto nos permite ver todos los resultados
-                console.log("LLamamos a la API", response.data.posts);
+                console.log("LLamamos a la API", response.data.results);
 
                 //Cuando recibimos los datos
                 dispach({
