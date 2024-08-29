@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 //Importamos el componente para que lo pueda coger
 import Logo from './logo';
 import SearchBar from './searchBar';
