@@ -7,10 +7,11 @@ import {withRouter} from "react-router-dom";
 
 class SearchBar extends Component{
      //Este método maneja la acción de envío del formulario. Recibe un objeto que contiene el campo query, y simplemente lo registra en la consola, bueno ahora lo manda a results
-    handleFormSubmit = function ({query}) {
-        console.log("Envio del formulario", query);
+    handleFormSubmit = (query)=> {
+        //console.log("Envio del formulario", query);
         //Esto nos lleva directamente a results
-        this.props.history.push('/results');
+        //this.props.history.push('/results');
+        this.props.onSubmit(query);
     }
     //Este método genera un campo de entrada (input) en el formulario. Usa el objeto field, que viene de Redux Form, y distribuye (...) todas las propiedades de field.input dentro del componente input. Esto incluye manejar el estado y los eventos del campo de entrada.
     renderInput(field) {

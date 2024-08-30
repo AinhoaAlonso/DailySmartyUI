@@ -9,7 +9,6 @@ export default class Post extends Component{
         })
         return planets;
     }*/
-
     render(){
         return(
             <li className="recent-post">
