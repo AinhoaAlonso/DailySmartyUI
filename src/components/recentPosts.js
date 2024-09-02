@@ -1,11 +1,10 @@
 //Componente de clase llamado RecentPosts que está conectado a Redux para manejar y mostrar los "posts recientes".
 import React, { Component} from "react";
-
 //Se utiliza para conectar el componente de React con el store de Redux.
 import { connect } from "react-redux";
-
 // importa todas las acciones definidas en el archivo actions/index.js
 import * as actions from "../actions";
+
 import Post from "./post";
 class RecentPosts extends Component{
 
@@ -52,6 +51,6 @@ function mapStateToProps(state) {
 }
 
 //connect es una función que conecta un componente de React al store de Redux.
-//1º argumento null, lo que significa que este componente no necesita acceder a ningún estado global específico de Redux (es decir, no necesita leer nada del store). Necesita leer cada post que le pasamos
+//1º argumento null, lo que significa que este componente no necesita acceder a ningún estado global específico de Redux. Necesita leer cada post que le pasamos
 //2º argumento actions, todas las acciones importadas como props al componente RecentPosts. Esto permite que RecentPosts llame a this.props.fetchRecentPosts().
 export default connect(mapStateToProps, actions) (RecentPosts);
