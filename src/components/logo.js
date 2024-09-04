@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 
-
+//Cuando pulsamos el logo que nos vuelva a la pagina principal
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 export default class Logo extends Component{
     render(){
         //Vamos a crear estilos online para que permita un tamaño personalizado utilizando el mismo logo pero de tamaño distintos
@@ -11,7 +12,10 @@ export default class Logo extends Component{
         }
         return(
             <div className="logo-main">
-                <img  style={size} alt="Logo Daily Smarty" src="/assets/ds_circle_logo.png" />
+                <Link to="/">
+                    <img  style={size} alt="Logo Daily Smarty" src="/assets/ds_circle_logo.png" />  
+                </Link>
+                
             </div>
         )
     }

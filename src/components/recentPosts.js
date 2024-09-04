@@ -16,7 +16,7 @@ class RecentPosts extends Component{
     //Creamos una funcion para que nos va a devolver los datos que le pidamos
     renderPosts = function (){
         //Lo mapeamo porque queremos acceder a la publicacion y la clave, nosotros cogemos otros datos porque es otra API
-        const posts = this.props.recentPost.map((post, index) => {
+        const posts = this.props.recentPosts.map((post, index) => {
             //La vamos a poner una condicion para que solo devuelva 3 resultados, en vez de tener aqui un lista con los datos, voy a crear un componente post.js y lo voy a llamar desde aquí
             if (index <3){
                 return(
@@ -25,7 +25,7 @@ class RecentPosts extends Component{
                 )
             }
         })
-        return posts
+        return posts;
     }
     //define el contenido HTML que se va a mostrar en la pantalla.
     render(){
@@ -46,7 +46,7 @@ class RecentPosts extends Component{
 //configurar nuestro mapa de estado, estamos teniendo acceso a nuestros posts
 function mapStateToProps(state) {
     return {
-        recentPost: state.results.recentPosts
+        recentPosts: state.results.recentPosts
     }
 }
 

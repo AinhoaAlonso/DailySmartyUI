@@ -1,4 +1,4 @@
-import { SET_RECENT_POSTS } from "./types";
+import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from "./types";
 
 import axios from "axios";
 
@@ -38,10 +38,10 @@ export function fetchPostsWithQuery(query) {
                 console.log("LLamamos a la API de resultados filtrados", response.data.results);
 
                 //Cuando recibimos los datos
-                /*dispatch({
-                    type: SET_RECENT_POSTS,
+                dispatch({
+                    type: SET_RESULTS_POSTS,
                     payload: response.data.results
-                })*/
+                })
             })
             .catch(error =>{
                 console.log("Error de llamada a la API", error);

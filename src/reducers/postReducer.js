@@ -1,11 +1,13 @@
 //Importamos nuestra action que va a ser manejada por este reducer
 
-import { SET_RECENT_POSTS } from "../actions/types";
+import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from "../actions/types";
+
+//import Results from "../components/results";
 //import RecentPosts from "../components/recentPosts";
 
 //necesitamos declarar un estado inicial
 const INIT_STATE = {
-    results: [],
+    resultsPosts: [],
     recentPosts: []
 }
 //declaración switch para ver si estamos alcanzando esa acción.
@@ -17,8 +19,13 @@ export default function(state = INIT_STATE, action){
                 //aqui el operador de propagacion esta tomando todos los datos de INIT_STATE
                 ...state, 
                 recentPosts
-            };
-    
+            }
+        case SET_RESULTS_POSTS:
+            const resultsPosts = action.payload;
+            return{
+                ...state,
+                resultsPosts
+            }
         default:
             return state;
     }

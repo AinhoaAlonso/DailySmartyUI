@@ -5,10 +5,10 @@ import { Field, reduxForm } from "redux-form";
 //componente de orden superior HOC, inyecta propiedades relacionadas con la navegación (history, location y match)
 import {withRouter} from "react-router-dom";
 
-class SearchBar extends Component{
+class SearchBar extends Component {
     
      //Este método maneja la acción de envío del formulario. Recibe un objeto que contiene el campo query, y simplemente lo registra en la consola, bueno ahora lo manda a results. Importante poner ({}), para no renderizar el objeto directamente
-    handleFormSubmit = ({query})=> {
+    handleFormSubmit = function ({query}) {
         this.props.onSubmit(query);
     }
 
