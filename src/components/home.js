@@ -15,10 +15,12 @@ class Home extends Component {
   
   //funcion de la barra de busqueda con el argumento que le pasamos desde searchbar.js
   handleSearchBarSubmit(query) {
-    console.log("Manejo de la barra busqueda en home", query);
-    this.props.fetchPostsWithQuery(query);
-    //Esto nos lleva directamente a results
-    this.props.history.push('/results');
+    //console.log("Manejo de la barra busqueda en home", query);
+    //Ponemos una devolucion de llamada con un funcion flecha, la idea es ralentizar un poco la aplicacion para que la experiencia de usuario sea mejor
+    this.props.fetchPostsWithQuery(query, ()=>{
+      //Esto nos lleva directamente a results
+      this.props.history.push('/results');
+    });
   }
   
   render() {

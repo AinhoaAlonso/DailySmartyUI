@@ -11,7 +11,7 @@ import * as actions from "../actions";
 class Results extends Component{
     //funcion de la barra de busqueda con el argumento que le pasamos desde searchbar.js
     handleSearchBarSubmit(query) {
-        console.log("Manejo de la barra busqueda en results", query);
+        //console.log("Manejo de la barra busqueda en results", query);
         this.props.fetchPostsWithQuery(query);
     }
     render(){

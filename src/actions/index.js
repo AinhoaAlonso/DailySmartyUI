@@ -11,7 +11,7 @@ export function fetchRecentPosts() {
         axios.get("https://swapi.dev/api/films/")
             .then(response =>{
                 //Esto nos permite ver todos los resultados
-                console.log("LLamamos a la API", response.data.results);
+                //console.log("LLamamos a la API", response.data.results);
 
                 //Cuando recibimos los datos
                 dispatch({
@@ -26,7 +26,7 @@ export function fetchRecentPosts() {
     }
 }
 //Vamos a traer desde la api los posts filtrados por lo que pongamos en la barra de búsqueda
-export function fetchPostsWithQuery(query) { 
+export function fetchPostsWithQuery(query, callback) { 
     //Esta función que se retorna recibe un argumento llamado dispatch, que es una función proporcionada por Redux.
     //Esto es útil para manejar tareas asíncronas, como solicitudes a APIs.
     //Esto es lo que haremos para llamar a los posts desde nuestra barra de busqueda
@@ -34,14 +34,17 @@ export function fetchPostsWithQuery(query) {
         axios.get(`https://swapi.dev/api/films/?search=${query}`)
             .then(response =>{
                 //Esto nos permite ver todos los resultados
-                console.log(query);
-                console.log("LLamamos a la API de resultados filtrados", response.data.results);
+                //console.log(query);
+                //console.log("LLamamos a la API de resultados filtrados", response.data.results);
 
                 //Cuando recibimos los datos
                 dispatch({
                     type: SET_RESULTS_POSTS,
                     payload: response.data.results
                 })
+                if (callback){
+                    callback();
+                }
             })
             .catch(error =>{
                 console.log("Error de llamada a la API", error);
