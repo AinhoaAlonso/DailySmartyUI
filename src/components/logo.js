@@ -15,7 +15,6 @@ export default class Logo extends Component{
                 <Link to="/">
                     <img  style={size} alt="Logo Daily Smarty" src="/assets/ds_circle_logo.png" />  
                 </Link>
-                
             </div>
         )
     }

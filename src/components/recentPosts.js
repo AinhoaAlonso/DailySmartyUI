@@ -21,7 +21,8 @@ class RecentPosts extends Component{
             if (index <3){
                 return(
                     //Estoy pasando todos los nombres de datos de post, todos los atributos gracias al operador de propagación{...}
-                    <Post {...post} key={index} />
+                    <Post type="recent" 
+                    {...post} key={index} />
                 )
             }
         })
