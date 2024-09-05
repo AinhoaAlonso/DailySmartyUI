@@ -1,3 +1,12 @@
+//Variables siempre arriba
+$color-gray-one: #666666;
+$color-gray-two: #B3B3B3;
+
+
+@import "./searchBar.scss";
+
+
+
 body{
     font-family: "Lato", sans-serif;
 }
@@ -16,3 +25,5 @@ body{
     justify-items: center;
    
 }
+
+

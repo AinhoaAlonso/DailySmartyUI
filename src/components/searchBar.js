@@ -25,7 +25,10 @@ class SearchBar extends Component {
             //Aquí se define el formulario, con una clase search-bar y un evento onSubmit que ejecuta handleSubmit, pasándole handleFormSubmit como argumento. El método bind(this) asegura que this dentro de handleFormSubmit se refiera al componente SearchBar.
             <form className="search-bar" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                 {/*Este componente viene de Redux Form. Se utiliza para conectar un campo de formulario con Redux. El name="query" indica que este campo será parte del objeto de datos del formulario bajo la clave query. component={this.renderInput} especifica que renderInput será el método usado para renderizar el campo.*/}
-                <Field name="query" component={this.renderInput} />
+                <div className="search-bar-wrapper">
+                    <Field name="query" component={this.renderInput} />
+                    <p>Press return to search</p>
+                </div>
             </form>
         )
     }
