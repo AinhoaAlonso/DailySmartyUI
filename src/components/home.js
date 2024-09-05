@@ -25,7 +25,7 @@ class Home extends Component {
   
   render() {
     return (
-      <div className='app'>
+      <div className='home'>
         <div>
           <Logo />
         </div>
