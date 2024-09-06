@@ -3,9 +3,13 @@ $color-gray-one: #666666;
 $color-gray-two: #B3B3B3;
 $color-blue-one: #0079FF;
 
-
+@import "./mixins.scss";
 @import "./searchBar.scss";
 @import "./recentPosts.scss";
+@import "./results.scss";
+@import "./post.scss";
+@import "./home.scss";
+
 
 
 
@@ -17,25 +21,18 @@ body{
     justify-content: center;
 
 }
-
-.home {
-    height: 100vh;
-    width: 66vw;
-    display: grid;
-    align-content: space-around;
-    justify-items: stretch;
-   
-}
 .logo-main, .recent-posts{
     display: grid;
     justify-items: center;
     align-content: center;
 }
+
 ul{
     margin: 0;
     padding: 0;
     //Con esto quito los puntos de delante de las listas
     list-style-type: none;
 }
+
 
 

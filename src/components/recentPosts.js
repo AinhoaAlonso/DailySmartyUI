@@ -28,7 +28,7 @@ class RecentPosts extends Component{
         })
         return posts;
     }
-    //define el contenido HTML que se va a mostrar en la pantalla.
+    //define el contenido HTML que se va a mostrar en la pantalla home.
     render(){
         return(
             <div className="recent-posts">

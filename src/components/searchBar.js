@@ -13,6 +13,7 @@ class SearchBar extends Component {
     }
 
     //Este método genera un campo de entrada (input) en el formulario. Usa el objeto field, que viene de Redux Form, y distribuye (...) todas las propiedades de field.input dentro del componente input. Esto incluye manejar el estado y los eventos del campo de entrada.
+    //Añadimos aqui el icono f002 y colocamos &#x delante
     renderInput(field) {
         return <input type="text" placeholder="&#xf002; Search DailySmarty" {...field.input} />
         
@@ -24,7 +25,8 @@ class SearchBar extends Component {
 
         return(
             //Aquí se define el formulario, con una clase search-bar y un evento onSubmit que ejecuta handleSubmit, pasándole handleFormSubmit como argumento. El método bind(this) asegura que this dentro de handleFormSubmit se refiera al componente SearchBar.
-            <form className="search-bar" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            //especificaremos una página para nuestra barra de búsqueda, como es JS lo hacemos entre {}, lo que hace esto es que toma de home y results de la barra de busqueda y a la class le añade la page, si es home: search-bar-home y si es results: search-bar-results
+            <form className={`search-bar search-bar-${this.props.page}`} onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                 {/*Este componente viene de Redux Form. Se utiliza para conectar un campo de formulario con Redux. El name="query" indica que este campo será parte del objeto de datos del formulario bajo la clave query. component={this.renderInput} especifica que renderInput será el método usado para renderizar el campo.*/}
                 <div className="search-bar-wrapper">
                     <Field name="query" component={this.renderInput} />
