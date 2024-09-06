@@ -14,7 +14,8 @@ class SearchBar extends Component {
 
     //Este método genera un campo de entrada (input) en el formulario. Usa el objeto field, que viene de Redux Form, y distribuye (...) todas las propiedades de field.input dentro del componente input. Esto incluye manejar el estado y los eventos del campo de entrada.
     renderInput(field) {
-        return <input type="text" placeholder="Search DailySmarty" {...field.input} />
+        return <input type="text" placeholder="&#xf002; Search DailySmarty" {...field.input} />
+        
     }
       
     render(){

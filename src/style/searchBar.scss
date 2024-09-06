@@ -19,6 +19,10 @@
             //Marcado de posicion de la barra de búsqueda
             &::placeholder{
                 color: $color-gray-two;
+                font-family: 'Font Awesome\ 5 Free', 'Lato', Arial, Helvetica, sans-serif;
+                //Hasta que no hemos aplicado el peso de la fuente no ha aparecido
+                font-weight: 600;
+                
             }
             &:focus {
                 outline: none;
@@ -28,8 +32,7 @@
         p{
             text-align: right;
             font-size: 14px;
-            color:$color-gray-two;
+            color: $color-gray-two;
         }
     }
-    
 }
