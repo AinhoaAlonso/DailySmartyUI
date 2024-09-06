@@ -1,9 +1,11 @@
 //Variables siempre arriba
 $color-gray-one: #666666;
 $color-gray-two: #B3B3B3;
+$color-blue-one: #0079FF;
 
 
 @import "./searchBar.scss";
+@import "./recentPosts.scss";
 
 
 
@@ -16,14 +18,24 @@ body{
 
 }
 
-.home{
+.home {
     height: 100vh;
     width: 66vw;
-
     display: grid;
     align-content: space-around;
-    justify-items: center;
+    justify-items: stretch;
    
+}
+.logo-main, .recent-posts{
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    //Con esto quito los puntos de delante de las listas
+    list-style-type: none;
 }
 
 
