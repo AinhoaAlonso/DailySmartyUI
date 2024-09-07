@@ -51,17 +51,17 @@ export default class Post extends Component{
             )
         }else if(this.props.type === "result"){
             return(
-                <li className="result-post">
+                <li className="result-post"
+                onMouseEnter={() => this.setState({height: 100})}
+                onMouseLeave={() => this.setState({height: 0})}
+                >
                     <div className="result-post-director">
                         {this.props.director}
                     </div>
                     {/*Aquí lo que vamos a hacer es que cuando pongas el raton encima del titulo abre una animacion de desplazamiento hacia abajo con los links de los planets y luego quitas el raton la quita */}
                     {/*Le amplia la altura a 100 y luego la baja a cero */}
                     <div className="result-post-title">
-                        <a href= {this.props.url} 
-                            onMouseEnter={() => this.setState({height: 70})}
-                            onMouseLeave={() => this.setState({height: 0})}
-                        >
+                        <a href= {this.props.url}>
                            {this.props.title} 
                         </a>
                         {/*Hacemos que el titulo sea un enlace de la url

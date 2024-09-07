@@ -39,6 +39,24 @@
         line-height: 22px;
     }
     .result-post-url{
+        display: flex;
 
+    }
+}
+.link-planets{
+    //Tenemos que dar altura al contenedor principal para poder ver los links
+    min-height: 70px;
+    display: flex;
+
+    .link-planets-box{
+        min-width: 70px;
+        background-color: $color-gray-three;
+        margin-right: 16px;
+
+    }
+    .link-planets-links{
+        color: $color-gray-one;
+        font-size: 14px;
+        line-height: 17px;
     }
 }
