@@ -32,3 +32,8 @@ ul{
     //Con esto quito los puntos de delante de las listas
     list-style-type: none;
 }
+.no-content{
+    color: $color-gray-one;
+    font-size: 14px;
+    line-height: 17px;
+}

@@ -40,13 +40,16 @@
     }
     .result-post-url{
         display: flex;
+
     }
 }
 .link-planets{
     //Tenemos que dar altura al contenedor principal para poder ver los links
     min-height: 70px;
     display: flex;
-    margin-left: 15px;
+    flex-basis: 205px;
+    margin-right: 37px;
+    //margin-left: 15px;
    
 
     .link-planets-box{
@@ -60,9 +63,5 @@
         font-size: 14px;
         line-height: 17px;
         
-        /*a{
-            color: $color-gray-one;
-            text-decoration: line-through;
-        }*/
     }
 }

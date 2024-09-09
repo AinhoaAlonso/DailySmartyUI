@@ -25,31 +25,18 @@ export default class Post extends Component{
         //variable que nos devuelve la ultima posición de planets, "n" toma valor 22
         let n = str.lastIndexOf("planets");
         //variable que nos devuelve una cadena desde la posicion de "n" y el ultimo valor de la cadena, que es la longitud total del string
-        let res1 = str.substring(n, str.length);
-        //console.log(res1); // Esto da como resultado: planets/1/
-        
-        //asignamos planets/1/ a "str2"
-        let str2 = res1;
-        //variable que nos devuelve la posicion de la ultima "/", toma valor 9
-        let n2 = str2.lastIndexOf("/");
+        let res1 = str.substring(n, str.length); // Esto da como resultado: planets/1/
+        let str2 = res1; //asignamos planets/1/ a "str2"
+        let n2 = str2.lastIndexOf("/"); //variable que nos devuelve la posicion de la ultima "/", toma valor 9
         //nos devuelve una cadena des del posicion 9 hasta el final del string, que es la longitud total del string
-        let res2 = str2.substring(n2, str2.length);
-        //console.log(res2); Da como resultado "/"
-        
+        let res2 = str2.substring(n2, str2.length);  //Da como resultado "/"
+       
         //Condición para quitar las barras, si 9 + 1 es igual a la longitud total de la cadena (se va a cumplir)
         if((n2 + 1 ) === str2.length){
-            //nos devuelve el corte desde la posicion 0 a la "n2" que era 9: planets/1 sin la barra del final
-            const str3 = str2.slice(0, n2);
-            //console.log(str3);
-            //const planet = str3.substring (0)
-            //Volvemos a buscar la ultima posicion de "/" del string "str3" (planets/1), nos da como valor 7
-            const num = str3.lastIndexOf("/");
-            //Nos devuelve desde la posicion 0 hasta la variable numnos da como resultado "planets"
-            const planet = str3.substring (0, num)
-            //console.log(planet); nos da como resultado "planets"
-            //nos devuelve el string desde 7+1 hasta la longitud total del string
-            const res3 = str3.substring (num + 1, str3.length);
-            //console.log(res3); En este caso devuelve el numero final que tenga el link "1" en este caso
+            const str3 = str2.slice(0, n2);//nos devuelve el corte desde la posicion 0 a la "n2" que era 9: planets/1 sin la barra del final
+            const num = str3.lastIndexOf("/");//Volvemos a buscar la ultima posicion de "/" del string "str3" (planets/1), nos da como valor 7
+            const planet = str3.substring (0, num)//Nos devuelve desde la posicion 0 hasta la variable numnos da como resultado "planets"
+            const res3 = str3.substring (num + 1, str3.length); //nos devuelve el string desde 7+1 hasta la longitud total del string, en este caso "1"
             //Concatenamos la variable planet con espacio en medio y la variable res3: planets 1
             const link = planet.concat(" ", res3);
             //devuelve el string del link la primera letra con mayúscula y el resto en minúscula
@@ -71,6 +58,10 @@ export default class Post extends Component{
                 </div>
             )
         })
+        //condicion de que si no hay ningun link de planetas muestre este mensaje
+        if(planets === 0){
+            return <div className="no-content">No Planets Links</div>
+        }
         return planets;
     }
 
