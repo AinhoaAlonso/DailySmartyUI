@@ -1,24 +1,19 @@
 .results{
-    //@include default-page-layout();
     height: 100vh;
     width: 66vw;
     display: grid;
-
     margin-top: 52px;
     grid-row-gap: 44px;
-
 }
 .results-posts{
     display: grid;
     grid-row-gap: 21px;
 
     .results-posts-wrapper{
-
         .results-posts-posts{
             display: grid;
             grid-row-gap: 20px;
             justify-content: stretch;
-            
         }
     }
 }
@@ -40,7 +35,6 @@
     }
     .result-post-url{
         display: flex;
-
     }
 }
 .link-planets{
@@ -49,19 +43,15 @@
     display: flex;
     flex-basis: 205px;
     margin-right: 37px;
-    //margin-left: 15px;
    
-
     .link-planets-box{
         min-width: 70px;
         background-color: $color-gray-three;
         margin-right: 16px;
-
     }
     .link-planets-link a{
         color: $color-gray-one;
         font-size: 14px;
         line-height: 17px;
-        
     }
 }
