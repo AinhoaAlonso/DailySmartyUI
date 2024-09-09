@@ -18,6 +18,45 @@ export default class Post extends Component{
         })
         return planets;
     }*/
+    
+    //Funcion para conseguir lo que queremos mostrar de los links, le pasamos el argumento del link
+    //Los links son siempre igual: "https://swapi.dev/api/planets/1/", lo que queremos es que nos muestre solo Planets 1
+    getNameForPlanetsLink(str){
+        //variable que nos devuelve la ultima posición de planets, "n" toma valor 22
+        let n = str.lastIndexOf("planets");
+        //variable que nos devuelve una cadena desde la posicion de "n" y el ultimo valor de la cadena, que es la longitud total del string
+        let res1 = str.substring(n, str.length);
+        //console.log(res1); // Esto da como resultado: planets/1/
+        
+        //asignamos planets/1/ a "str2"
+        let str2 = res1;
+        //variable que nos devuelve la posicion de la ultima "/", toma valor 9
+        let n2 = str2.lastIndexOf("/");
+        //nos devuelve una cadena des del posicion 9 hasta el final del string, que es la longitud total del string
+        let res2 = str2.substring(n2, str2.length);
+        //console.log(res2); Da como resultado "/"
+        
+        //Condición para quitar las barras, si 9 + 1 es igual a la longitud total de la cadena (se va a cumplir)
+        if((n2 + 1 ) === str2.length){
+            //nos devuelve el corte desde la posicion 0 a la "n2" que era 9: planets/1 sin la barra del final
+            const str3 = str2.slice(0, n2);
+            //console.log(str3);
+            //const planet = str3.substring (0)
+            //Volvemos a buscar la ultima posicion de "/" del string "str3" (planets/1), nos da como valor 7
+            const num = str3.lastIndexOf("/");
+            //Nos devuelve desde la posicion 0 hasta la variable numnos da como resultado "planets"
+            const planet = str3.substring (0, num)
+            //console.log(planet); nos da como resultado "planets"
+            //nos devuelve el string desde 7+1 hasta la longitud total del string
+            const res3 = str3.substring (num + 1, str3.length);
+            //console.log(res3); En este caso devuelve el numero final que tenga el link "1" en este caso
+            //Concatenamos la variable planet con espacio en medio y la variable res3: planets 1
+            const link = planet.concat(" ", res3);
+            //devuelve el string del link la primera letra con mayúscula y el resto en minúscula
+            return link[0].toUpperCase() + link.slice(1);
+        }
+        
+    }
     //Igual que el ejemplo de arriba, vamos a crear como si tuvieramos un array para buscar los planetas en la pagina de resultados
     renderPlanets(){
         let planets = this.props.planets.map((planet, index) => {
@@ -26,7 +65,8 @@ export default class Post extends Component{
                     <div className="link-planets-box">
                     </div>
                     <div className="link-planets-link">
-                        <a href={planet}>Useful Links Planets #{index + 1}</a>
+                        {/*Le pasamos la función para poner el link bonito y como argumento en este caso el planet en el que estamos */}
+                        <a href={planet}>{this.getNameForPlanetsLink(planet)}</a>
                     </div>
                 </div>
             )
