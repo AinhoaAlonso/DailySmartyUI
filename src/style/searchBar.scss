@@ -44,6 +44,10 @@
     input{
         font-size: 40px;
         height: 118px;
+        @media screen and (max-width: 600px) {
+            font-size: 23px;
+            height: 59px;
+        }
     }
 }
 .search-bar-results{
